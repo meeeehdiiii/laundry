@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 
@@ -43,9 +43,9 @@ const Contact = () => {
       detail: t('contact.info.phone'),
     },
     {
-      icon: Mail,
-      title: t('contact.info.email'),
-      detail: t('contact.info.email'),
+      icon: Instagram,
+      title: 'Instagram',
+      detail: '@' + t('contact.info.instagram'),
     },
   ];
 
@@ -153,20 +153,34 @@ const Contact = () => {
                 {t('contact.info.hours')}
               </h3>
               
-              <div className="space-y-2 text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>Montag - Freitag:</span>
-                  <span className="font-medium">7:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Samstag:</span>
-                  <span className="font-medium">8:00 - 14:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sonntag:</span>
-                  <span className="font-medium">Geschlossen</span>
-                </div>
-              </div>
+               <div className="space-y-2 text-muted-foreground">
+                 <div className="flex justify-between">
+                   <span>{t('contact.info.hours.weekdays').split(':')[0]}:</span>
+                   <span className="font-medium">8:00 - 18:00</span>
+                 </div>
+                 <div className="flex justify-between">
+                   <span>{t('contact.info.hours.saturday').split(':')[0]}:</span>
+                   <span className="font-medium">8:00 - 12:30</span>
+                 </div>
+                 <div className="flex justify-between">
+                   <span>{t('contact.info.hours.sunday').split(':')[0]}:</span>
+                   <span className="font-medium">{t('contact.info.hours.sunday').split(': ')[1]}</span>
+                 </div>
+               </div>
+
+               {/* Google Maps */}
+               <div className="mt-6">
+                 <iframe
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.7854547!2d11.5531!3d48.1537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e75f9a38c5fd9%3A0x10fdb8c2bb57c63c!2sDietleibstr.%2011%2C%2080634%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1647889123456!5m2!1sde!2sde"
+                   width="100%"
+                   height="200"
+                   style={{ border: 0 }}
+                   allowFullScreen
+                   loading="lazy"
+                   referrerPolicy="no-referrer-when-downgrade"
+                   className="rounded-lg"
+                 />
+               </div>
             </Card>
           </div>
         </div>

@@ -41,13 +41,13 @@ const About = () => {
                 {t('about.text')}
               </p>
               
-              <div className="flex items-center space-x-4 p-6 bg-primary/5 rounded-lg border border-primary/10">
-                <div className="text-4xl font-bold text-primary">39</div>
-                <div>
-                  <div className="font-semibold text-foreground">Jahre Erfahrung</div>
-                  <div className="text-sm text-muted-foreground">Seit 1985 für Sie da</div>
-                </div>
-              </div>
+               <div className="flex items-center space-x-4 p-6 bg-primary/5 rounded-lg border border-primary/10">
+                 <div className="text-4xl font-bold text-primary">19</div>
+                 <div>
+                   <div className="font-semibold text-foreground">{t('about.years')}</div>
+                   <div className="text-sm text-muted-foreground">Seit 2006 für Sie da</div>
+                 </div>
+               </div>
             </div>
 
             {/* Values */}

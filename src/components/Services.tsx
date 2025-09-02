@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shirt, Sparkles, Flame, Scissors } from 'lucide-react';
+import { Shirt, Sparkles, Flame, Scissors, Droplets, Settings, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import dryCleaningImage from '@/assets/dry-cleaning.jpg';
 import laundryFoldingImage from '@/assets/laundry-folding.jpg';
@@ -12,28 +12,40 @@ const Services = () => {
 
   const services = [
     {
-      icon: Sparkles,
-      title: t('services.dry-cleaning'),
-      description: t('services.dry-cleaning.desc'),
-      image: dryCleaningImage,
-    },
-    {
-      icon: Shirt,
-      title: t('services.laundry'),
-      description: t('services.laundry.desc'),
+      icon: Droplets,
+      title: t('services.washing'),
+      description: t('services.washing.desc'),
       image: laundryFoldingImage,
     },
     {
-      icon: Flame,
-      title: t('services.ironing'),
-      description: t('services.ironing.desc'),
+      icon: Shirt,
+      title: t('services.shirts'),
+      description: t('services.shirts.desc'),
       image: ironingServiceImage,
+    },
+    {
+      icon: Settings,
+      title: t('services.machines'),
+      description: t('services.machines.desc'),
+      image: dryCleaningImage,
     },
     {
       icon: Scissors,
       title: t('services.alterations'),
       description: t('services.alterations.desc'),
-      image: dryCleaningImage, // Reusing image
+      image: dryCleaningImage,
+    },
+    {
+      icon: Sparkles,
+      title: t('services.carpets'),
+      description: t('services.carpets.desc'),
+      image: laundryFoldingImage,
+    },
+    {
+      icon: Heart,
+      title: t('services.wedding'),
+      description: t('services.wedding.desc'),
+      image: ironingServiceImage,
     },
   ];
 
@@ -56,7 +68,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-large transition-all duration-500 border-0 card-gradient overflow-hidden">
               <div className="relative h-48 overflow-hidden">
